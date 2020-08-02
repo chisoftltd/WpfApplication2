@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfApplication2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Content="Load" Width="100" Height="28" 
+                Click="Button_Click"/>
+        <DataGrid Name="dg" Grid.Row="1" AutoGenerateColumns="False"
+                  AlternatingRowBackground="PowderBlue" Padding="80,30">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" 
+                                    Binding="{Binding Path=id}" Width="80"/>
+                <DataGridTextColumn Header="Date" 
+                                    Binding="{Binding Path=date}" Width="150"/>
+                <DataGridTextColumn Header="Rainfall" 
+                                    Binding="{Binding Path=rain}" Width="110"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
